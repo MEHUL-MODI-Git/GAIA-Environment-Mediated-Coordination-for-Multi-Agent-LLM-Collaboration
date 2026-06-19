@@ -162,6 +162,10 @@ pytest tests/
 
 ---
 
-## License
+## Copyright
 
-Released under the [MIT License](LICENSE).
+Copyright (c) 2026 Mehul Modi. All rights reserved.
+
+This repository accompanies a URECA@NTU research project and is shared for
+review and reference. No open-source license is granted at this time; please
+contact the author regarding reuse.

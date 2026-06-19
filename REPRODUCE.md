@@ -210,7 +210,7 @@ python experiments/puzzle/scripts/run_puzzle.py --condition all
 This is the cleaned verification submission. It contains the framework
 (`gaia/`), every paper experiment (`experiments/`, with code + result JSON +
 retained episode **state dumps** + figures), datasets (`data/`), tests
-(`tests/`), and docs (`README.md`, `DOCUMENTATION.md`, this file, `LICENSE`).
+(`tests/`), and docs (`README.md`, `DOCUMENTATION.md`, this file).
 
 The following were intentionally **excluded** and are not needed to reproduce
 any experiment:
