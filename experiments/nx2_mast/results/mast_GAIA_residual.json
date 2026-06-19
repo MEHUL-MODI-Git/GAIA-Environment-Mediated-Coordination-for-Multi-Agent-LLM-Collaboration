@@ -1,0 +1,600 @@
+{
+  "label": "GAIA_residual",
+  "judge_model": "gpt-4.1",
+  "n_failed_traces": 58,
+  "mode_counts": {
+    "FM-3.2": 53,
+    "FM-1.4": 17,
+    "FM-2.2": 14,
+    "FM-2.1": 8,
+    "FM-2.4": 6,
+    "FM-2.6": 6,
+    "FM-2.5": 4,
+    "FM-2.3": 2,
+    "FM-3.3": 1
+  },
+  "primary_counts": {
+    "FM-3.2": 41,
+    "FM-1.4": 10,
+    "FM-2.1": 5,
+    "FM-2.4": 1,
+    "FM-3.3": 1
+  },
+  "per_trace": [
+    {
+      "trace": "puzzle_008_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Step 2 and 3 lose previously established drink assignments for Alice and Dave. No verification step checks for consistency or completeness before proposing a solution."
+    },
+    {
+      "trace": "puzzle_018_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step verifies the proposed assignments; deductions are combined, but no explicit check for consistency or completeness is performed before solution."
+    },
+    {
+      "trace": "puzzle_014_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Alice's job regresses from 'artist' (steps 0-1) to 'UNKNOWN' (steps 2-3); solution synthesis proceeds without verifying or reconciling this loss."
+    },
+    {
+      "trace": "puzzle_010_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Step 2 resets all facts to UNKNOWN except Dave's, losing prior deductions (FM-1.4, FM-2.1). No verification of combined deductions before proposing solution (FM-3.2)."
+    },
+    {
+      "trace": "puzzle_013_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "The agents repeatedly revert to earlier partial states, losing prior deductions (FM-1.4). No explicit verification step is performed before proposing the solution (FM-3.2)."
+    },
+    {
+      "trace": "puzzle_020_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-1.4"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Repeated deduction steps without final verification; context alternates between Dave's job known/unknown, indicating loss of conversation history and incomplete solution check."
+    },
+    {
+      "trace": "puzzle_007_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents repeatedly state uncertainty and partial deductions but never attempt a full verification or check for solution completeness before proposing a solution."
+    },
+    {
+      "trace": "puzzle_020_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification of the proposed solution; deductions are combined, but correctness is not checked before final answer."
+    },
+    {
+      "trace": "puzzle_013_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step attempts to verify or check the synthesized deductions; the solution proceeds without confirming correctness or completeness."
+    },
+    {
+      "trace": "puzzle_017_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents repeatedly state what cannot be determined but never attempt to verify or check for contradictions; they also proceed without clarifying ambiguous assignments."
+    },
+    {
+      "trace": "puzzle_006_fault_gaia_partial.state",
+      "modes": [
+        "FM-2.4",
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Contradictory deductions were identified but not resolved; agents failed to share or integrate decisive info, and correct peer input was ignored. No complete verification before synthesis."
+    },
+    {
+      "trace": "puzzle_003_fault_gaia_partial.state",
+      "modes": [
+        "FM-2.4",
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.4",
+      "confidence": 0.95,
+      "evidence": "Contradictory facts from experts were not reconciled; decisive info from one agent was not shared or integrated, and error checking was incomplete."
+    },
+    {
+      "trace": "puzzle_012_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.6"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step before proposing conflicting solutions; final answers contradict prior deductions (e.g., Alice's job), showing reasoning-action mismatch."
+    },
+    {
+      "trace": "puzzle_005_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents repeatedly state uncertainty but never attempt to verify or resolve ambiguities; they proceed without clarifying undetermined assignments, propagating incomplete deductions."
+    },
+    {
+      "trace": "puzzle_002_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Step 2 and 3 lose previously established facts (Carol's pet/drink, Dave's pet). The conversation resets deductions, and no verification of final assignments is shown."
+    },
+    {
+      "trace": "puzzle_010_fault_gaia.state",
+      "modes": [
+        "FM-2.4",
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Contradictory deductions from FaultyExpert-B were identified but not fully resolved; some correct peer contributions were ignored and decisive info withheld, leading to incomplete verification."
+    },
+    {
+      "trace": "puzzle_015_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.85,
+      "evidence": "Agents repeatedly state uncertainty but proceed without verifying or clarifying ambiguous assignments; error propagates without a final check or clarification request."
+    },
+    {
+      "trace": "puzzle_013_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1"
+      ],
+      "primary": "FM-2.1",
+      "confidence": 0.95,
+      "evidence": "The trace repeatedly resets to earlier partial states, losing prior deductions (FM-1.4), and alternates between conflicting fact sets, indicating unwarranted conversation resets (FM-2.1)."
+    },
+    {
+      "trace": "puzzle_012_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents synthesized partial deductions but did not verify consistency; ambiguity about Alice/Dave jobs was not resolved nor clarified, and solution was proposed without full determination."
+    },
+    {
+      "trace": "puzzle_006_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step verifies or checks the proposed solution; deductions are simply combined and restated without confirming correctness or completeness."
+    },
+    {
+      "trace": "puzzle_019_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1"
+      ],
+      "primary": "FM-2.1",
+      "confidence": 0.95,
+      "evidence": "At step 2, all previous definite facts are lost and deductions revert to an earlier, less informed state, indicating a conversation reset and loss of conversation history."
+    },
+    {
+      "trace": "puzzle_016_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents never attempt to verify or check their partial deductions for consistency or completeness; they also proceed despite ambiguity (e.g., jobs of Bob/Dave) without seeking clarification."
+    },
+    {
+      "trace": "puzzle_006_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step; solution synthesis proceeds without checking consistency or completeness, leading to propagation of possible errors."
+    },
+    {
+      "trace": "puzzle_011_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1",
+        "FM-2.2",
+        "FM-2.3"
+      ],
+      "primary": "FM-2.1",
+      "confidence": 0.95,
+      "evidence": "The trace shows context resets (FM-2.1), loss of conversation history (FM-1.4), failure to clarify ambiguities (FM-2.2), and drift from the intended objective (FM-2.3)."
+    },
+    {
+      "trace": "puzzle_009_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents did not verify that their deduction (Bob=doctor) was consistent with all clues; error propagated without checking for contradictions or alternative possibilities."
+    },
+    {
+      "trace": "puzzle_017_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.4"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents failed to verify or propagate all deductions; some facts from one partition (e.g., teacher's drink) were not fully integrated into the final assignments."
+    },
+    {
+      "trace": "puzzle_014_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Conversation history is lost between steps (facts reset to UNKNOWN). No verification of deductions or solution is shown before proposing a solution."
+    },
+    {
+      "trace": "puzzle_002_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent performed a final verification step; deductions were partial and synthesis incomplete. Agents also failed to clarify ambiguities about job and pet assignments before proposing a solution."
+    },
+    {
+      "trace": "puzzle_011_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Step 2 loses Bob's assignments from prior steps (FM-1.4). Agents fail to share all deductions (FM-2.4). No explicit verification of the final synthesis (FM-3.2)."
+    },
+    {
+      "trace": "puzzle_015_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step verifies or checks the synthesized deductions; the solution proceeds without confirming consistency or completeness, allowing errors to propagate."
+    },
+    {
+      "trace": "puzzle_001_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Alternated between partial states, repeatedly losing prior deductions (e.g., Carol's facts lost after being established). No explicit verification step before proposing solution."
+    },
+    {
+      "trace": "puzzle_019_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step before proposing a solution; deductions are synthesized but not checked for consistency or completeness."
+    },
+    {
+      "trace": "puzzle_006_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent performed a complete verification or cross-check of the synthesized solution; deductions were listed but not validated against all constraints before proposing a solution."
+    },
+    {
+      "trace": "puzzle_012_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step before proposing the solution; deductions are combined but not checked for completeness or correctness against all clues."
+    },
+    {
+      "trace": "puzzle_015_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step before proposing solutions; agents proceed despite unresolved ambiguities (e.g., jobs/pets of Alice, Bob, Carol remain undetermined)."
+    },
+    {
+      "trace": "puzzle_005_fault_gaia_partial.state",
+      "modes": [
+        "FM-2.4",
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents failed to reconcile or share decisive info (FM-2.4), ignored correct peer deductions (FM-2.5), and did not verify or resolve contradictions before proposing a solution (FM-3.2)."
+    },
+    {
+      "trace": "puzzle_002_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.6"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step before proposing conflicting solutions; final actions contradict reasoning, as assignments for Alice differ despite same deductions."
+    },
+    {
+      "trace": "puzzle_001_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1"
+      ],
+      "primary": "FM-2.1",
+      "confidence": 0.95,
+      "evidence": "The agents repeatedly revert to earlier partial deduction states, losing progress (FM-1.4), and the conversation resets multiple times, discarding prior deductions (FM-2.1)."
+    },
+    {
+      "trace": "puzzle_012_fault_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents repeatedly synthesize without ever verifying or checking a final solution; ambiguity about Alice/Dave roles is never resolved, and no clarification is sought for unresolved assignments."
+    },
+    {
+      "trace": "puzzle_004_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step verifies the proposed assignments; deductions are listed, but no explicit check or validation of a complete solution is performed before proposing an answer."
+    },
+    {
+      "trace": "puzzle_004_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.95,
+      "evidence": "The agents deduced Dave owns the dog based on 'dog owner drinks coffee' and Dave drinks coffee, but did not fully verify exclusivity; possible misverification of deduction."
+    },
+    {
+      "trace": "puzzle_017_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step; deductions merged without checking for contradictions or completeness. Ambiguity in clues not clarified before synthesis."
+    },
+    {
+      "trace": "puzzle_005_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent attempted to verify or check the proposed deductions or solution; error propagated without validation, leading to failure."
+    },
+    {
+      "trace": "puzzle_001_fault_gaia.state",
+      "modes": [
+        "FM-2.3",
+        "FM-2.6",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Agents repeatedly synthesize contradictory facts, propagate unresolved conflicts, and never verify a consistent solution; reasoning and actions are misaligned with deductions."
+    },
+    {
+      "trace": "puzzle_007_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.6"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents failed to verify the final assignments, leading to conflicting solutions (e.g., Bob's job). The final action contradicts prior reasoning about job uncertainty."
+    },
+    {
+      "trace": "puzzle_009_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Step 2 resets all known facts to UNKNOWN, losing prior deductions. No verification of final assignments is shown. Conversation resets and skips checking."
+    },
+    {
+      "trace": "puzzle_015_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No step verifies the proposed deductions or checks for consistency; the agents synthesize deductions but never confirm correctness before proposing a solution."
+    },
+    {
+      "trace": "puzzle_011_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents never explicitly verify their deductions; they proceed with synthesis despite unresolved ambiguities and do not ask clarifying questions about undetermined assignments."
+    },
+    {
+      "trace": "puzzle_010_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.6"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent performed a complete verification step before proposing a solution; reasoning and assignments were inconsistent across steps, indicating reasoning-action mismatch."
+    },
+    {
+      "trace": "puzzle_004_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent performed a complete verification of the synthesized solution; ambiguity about Alice's job/pet/drink was not resolved, and clarifying questions were not asked."
+    },
+    {
+      "trace": "puzzle_007_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.6"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Final answer given despite unresolved conflict between synthesizers; no verification step to resolve disagreement. Synthesizer's output contradicts its own reasoning about uncertainty."
+    },
+    {
+      "trace": "puzzle_019_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents never explicitly verify their final assignments or check for consistency before proposing a solution; error propagation is likely due to skipped verification."
+    },
+    {
+      "trace": "puzzle_018_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Carol's job and Bob's drink are inconsistently tracked across steps; deductions are repeated and context is lost. No explicit verification of final assignments."
+    },
+    {
+      "trace": "puzzle_003_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-3.2"
+      ],
+      "primary": "FM-1.4",
+      "confidence": 0.95,
+      "evidence": "Step 2 and onward lose previously established facts (Alice drinks coffee, Carol owns cat). Final synthesis omits these, showing loss of conversation history and incomplete verification."
+    },
+    {
+      "trace": "puzzle_013_gaia.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No agent performed a final verification step; ambiguity about job/pet/drink assignments was not resolved or flagged. Agents proceeded under uncertainty without clarifying missing links."
+    },
+    {
+      "trace": "puzzle_018_gaia.state",
+      "modes": [
+        "FM-1.4",
+        "FM-2.1"
+      ],
+      "primary": "FM-2.1",
+      "confidence": 0.95,
+      "evidence": "The conversation repeatedly resets to earlier deduction states, losing progress and context (FM-2.1, FM-1.4). No clear forward progress is made between steps."
+    },
+    {
+      "trace": "puzzle_020_gaia.state",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "No explicit verification step is shown before proposing the solution; deductions are synthesized but not checked for consistency or completeness."
+    },
+    {
+      "trace": "puzzle_013_fault_gaia_partial.state",
+      "modes": [
+        "FM-3.2",
+        "FM-2.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "Contradictions noted but solution proceeds without resolving them; agents do not clarify ambiguity or verify consistency before final answer."
+    }
+  ]
+}

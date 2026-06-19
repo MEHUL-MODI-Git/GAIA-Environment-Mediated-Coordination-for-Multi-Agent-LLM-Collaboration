@@ -1,0 +1,301 @@
+{
+  "episode_id": "trap_rate_003",
+  "tasks": {
+    "c6941d52-8bf6-4b63-91fb-4c43279e158b": {
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "parent_id": null,
+      "title": "Solve trap_rate_003 (correlated failure test)",
+      "description": "Trap problem: A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average spee...",
+      "status": "CLAIMED",
+      "deps": [],
+      "priority": 1.0,
+      "lease": {
+        "agent_id": "system",
+        "claimed_at": "2026-05-17T17:00:39.002267",
+        "expires_at": "2026-05-17T17:02:39.002267"
+      },
+      "acceptance_criteria": "Final integer answer matches ground truth",
+      "metadata": {
+        "problem_id": "trap_rate_003",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?",
+        "answer": 48,
+        "task_type": "math_root",
+        "is_trap_problem": true,
+        "trap_category": "rate",
+        "common_wrong_answer": 50
+      },
+      "created_at": "2026-05-17T17:00:39.002201",
+      "updated_at": "2026-05-17T17:00:39.002273"
+    },
+    "11bec6dc-9093-441a-8a21-554e47e5a2ee": {
+      "task_id": "11bec6dc-9093-441a-8a21-554e47e5a2ee",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Solve (M0) \u2014 misled",
+      "description": "Misled solve: A car goes A->B at 60 km/h and returns B->A at 40 km/h. What...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_misled_0",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?",
+        "misleading_hint": "Heuristic: average speed for a trip is the arithmetic mean of the speeds used.",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T17:00:39.002367",
+      "updated_at": "2026-05-17T17:00:40.408863"
+    },
+    "6748ebc1-0945-45a6-be42-cae009791d8e": {
+      "task_id": "6748ebc1-0945-45a6-be42-cae009791d8e",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Solve (M1) \u2014 misled",
+      "description": "Misled solve: A car goes A->B at 60 km/h and returns B->A at 40 km/h. What...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_misled_1",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?",
+        "misleading_hint": "Heuristic: average speed for a trip is the arithmetic mean of the speeds used.",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T17:00:39.002431",
+      "updated_at": "2026-05-17T17:00:39.004115"
+    },
+    "c214b407-3729-4881-bddd-2f23d502bf15": {
+      "task_id": "c214b407-3729-4881-bddd-2f23d502bf15",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Solve (C0) \u2014 clean",
+      "description": "Clean solve: A car goes A->B at 60 km/h and returns B->A at 40 km/h. What...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_0",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T17:00:39.002490",
+      "updated_at": "2026-05-17T17:00:42.010881"
+    },
+    "6e048365-7be9-4ce9-86e4-3dc12a3117d2": {
+      "task_id": "6e048365-7be9-4ce9-86e4-3dc12a3117d2",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Aggregate solver answers",
+      "description": "Check whether all solvers agree on the answer",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 4.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_aggregate",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?"
+      },
+      "created_at": "2026-05-17T17:00:42.011682",
+      "updated_at": "2026-05-17T17:00:42.720485"
+    },
+    "9409fee3-5100-42a0-93cc-3bdb658d9188": {
+      "task_id": "9409fee3-5100-42a0-93cc-3bdb658d9188",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Reconcile conflicting answers",
+      "description": "Solvers disagreed. Audit ALL reasoning chains, identify any flawed shared assumption or heuristic, and produce the correct answer from first principles.",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 3.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_reconcile",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?"
+      },
+      "created_at": "2026-05-17T17:00:42.720919",
+      "updated_at": "2026-05-17T17:00:46.515134"
+    },
+    "3733dbf5-b031-4fb1-a52e-a7ef7fe9d2e2": {
+      "task_id": "3733dbf5-b031-4fb1-a52e-a7ef7fe9d2e2",
+      "parent_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "title": "Verify final answer",
+      "description": "Check proposed answer against ground truth",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 2.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_verify",
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?",
+        "answer": 48
+      },
+      "created_at": "2026-05-17T17:00:46.515618",
+      "updated_at": "2026-05-17T17:00:46.516715"
+    }
+  },
+  "artifacts": {
+    "56b7e238-65eb-44f0-a01e-db704f81b208": {
+      "artifact_id": "56b7e238-65eb-44f0-a01e-db704f81b208",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "author": "182461a0-8a91-4591-b96b-bf0465bd3115",
+      "content": "Step 1: Assign variables\n- Let the distance from A to B be D km.\n- Speed from A to B: 60 km/h.\n- Speed from B to A: 40 km/h.\n\nStep 2: Find the average speed for the round trip\n- According to the heuristic, the average speed is the arithmetic mean of the two speeds:\n  \n  Average speed = (Speed A->B + Speed B->A) / 2\n\nStep 3: Calculate the average speed\n- Sum of speeds: 60 + 40 = 100 km/h\n- Divide by 2: 100 / 2 = 50 km/h\n\n**Final Answer: 50**",
+      "provenance": [],
+      "created_at": "2026-05-17T17:00:40.408539",
+      "metadata": {
+        "subtype": "math_solution",
+        "solver_index": 100,
+        "solver_label": "Misled-Solver-0",
+        "agent_name": "M0",
+        "answer": 50,
+        "temperature": 0.0,
+        "is_misled": true,
+        "injected_hint": "Heuristic: average speed for a trip is the arithmetic mean of the speeds used."
+      }
+    },
+    "7a0a8b1b-5b81-4597-92bc-4e120a19ae0e": {
+      "artifact_id": "7a0a8b1b-5b81-4597-92bc-4e120a19ae0e",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "author": "ee38a6c8-6df5-442f-9f56-71b9956c6e25",
+      "content": "Step 1: Let the distance from A to B be D kilometers.\n\nStep 2: The time taken to go from A to B at 60 km/h is:\nTime_AtoB = D / 60 hours.\n\nStep 3: The time taken to return from B to A at 40 km/h is:\nTime_BtoA = D / 40 hours.\n\nStep 4: Total distance for the round trip is:\nTotal_Distance = D + D = 2D kilometers.\n\nStep 5: Total time for the round trip is:\nTotal_Time = (D / 60) + (D / 40) hours.\n\nStep 6: Find a common denominator for the total time:\nThe denominators are 60 and 40. The least common denominator is 120.\n\nStep 7: Rewrite the total time with denominator 120:\n(D / 60) = (2D / 120),\n(D / 40) = (3D / 120).\n\nTotal_Time = (2D / 120) + (3D / 120) = (2D + 3D) / 120 = 5D / 120 hours.\n\nStep 8: Simplify total time:\nTotal_Time = (5D) / 120 = D / 24 hours.\n\nStep 9: The average speed for the round trip is total distance divided by total time:\nAverage_Speed = Total_Distance / Total_Time = 2D / (D / 24).\n\nStep 10: Simplify the expression:\nAverage_Speed = 2D \u00d7 (24 / D) = 2 \u00d7 24 = 48 km/h.\n\n**Final Answer: 48**",
+      "provenance": [],
+      "created_at": "2026-05-17T17:00:42.010579",
+      "metadata": {
+        "subtype": "math_solution",
+        "solver_index": 0,
+        "solver_label": "Solver-1",
+        "agent_name": "C0",
+        "answer": 48,
+        "temperature": 0.0
+      }
+    },
+    "06785b89-7ac1-48c6-afa0-8ca94e05be98": {
+      "artifact_id": "06785b89-7ac1-48c6-afa0-8ca94e05be98",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "author": "665938ce-07ce-480d-972c-59fa973ff89c",
+      "content": "CONFLICT: Solver-1=48, Misled-Solver-0=50",
+      "provenance": [],
+      "created_at": "2026-05-17T17:00:42.720253",
+      "metadata": {
+        "subtype": "aggregator_verdict",
+        "agent_name": "Agg",
+        "unanimous": false,
+        "agreed_answer": null,
+        "solver_answers": {
+          "Solver-1": 48,
+          "Misled-Solver-0": 50
+        },
+        "conflict_summary": "Solver-1=48, Misled-Solver-0=50",
+        "num_solvers": 2
+      }
+    },
+    "fafcbea0-0c56-4db6-871b-1de083b02adb": {
+      "artifact_id": "fafcbea0-0c56-4db6-871b-1de083b02adb",
+      "type": "REVIEW",
+      "version": 1,
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "author": "ee7a9a13-bfbe-4109-ac4d-839bcfd92427",
+      "content": "## Error Analysis\n\n### Misled-Solver-0\n**Error:**  \nMisled-Solver-0 incorrectly used the arithmetic mean of the two speeds, i.e., (60 + 40) / 2 = 50 km/h, to calculate the average speed for the round trip.  \n**Specific Error:**  \nThe arithmetic mean is only correct if the time spent at each speed is the same, not the distance. In a round trip where the distances are equal but the speeds differ, the correct method is to use the harmonic mean, not the arithmetic mean.\n\n### Solver-1\nSolver-1's reasoning is correct. They properly calculated the total distance and total time, and then divided to find the average speed.\n\n## Solution\n\nLet the distance from A to B be \\( D \\) km.\n\n- **Time from A to B:** \\( t_1 = D / 60 \\) hours\n- **Time from B to A:** \\( t_2 = D / 40 \\) hours\n\n**Total distance:** \\( 2D \\) km  \n**Total time:** \\( t_1 + t_2 = D/60 + D/40 \\)\n\nFind a common denominator for the times:\n- \\( D/60 = 2D/120 \\)\n- \\( D/40 = 3D/120 \\)\n- So, \\( t_1 + t_2 = (2D + 3D)/120 = 5D/120 = D/24 \\) hours\n\n**Average speed:**  \n\\[\n\\text{Average speed} = \\frac{\\text{Total distance}}{\\text{Total time}} = \\frac{2D}{D/24} = 2D \\times \\frac{24}{D} = 48 \\text{ km/h}\n\\]\n\n## Final Answer\n**Final Answer: 48**",
+      "provenance": [],
+      "created_at": "2026-05-17T17:00:46.514679",
+      "metadata": {
+        "subtype": "reconciled_solution",
+        "agent_name": "Rec",
+        "answer": 48,
+        "triggered_by_conflict": true,
+        "conflict_summary": "Solver-1=48, Misled-Solver-0=50",
+        "num_solvers_reviewed": 2
+      }
+    }
+  },
+  "signals": {
+    "15284f38-ce22-437e-8852-2c78294cd84f": {
+      "signal_id": "15284f38-ce22-437e-8852-2c78294cd84f",
+      "type": "CONFLICT",
+      "task_id": "c6941d52-8bf6-4b63-91fb-4c43279e158b",
+      "description": "Math solvers disagree: Solver-1=48, Misled-Solver-0=50",
+      "severity": 0.8,
+      "resolved": true,
+      "created_at": "2026-05-17T17:00:42.720091",
+      "metadata": {
+        "conflict_summary": "Solver-1=48, Misled-Solver-0=50",
+        "solver_answers": {
+          "Solver-1": 48,
+          "Misled-Solver-0": 50
+        },
+        "question": "A car goes A->B at 60 km/h and returns B->A at 40 km/h. What is the average speed for the round trip, in km/h?"
+      }
+    }
+  },
+  "evidence": {
+    "4a0e9c92-54f7-4db7-9914-62105b4a77d1": {
+      "evidence_id": "4a0e9c92-54f7-4db7-9914-62105b4a77d1",
+      "type": "math_ground_truth",
+      "content": "Proposed: 48 | Ground truth: 48 | Result: PASS | Source: reconciled",
+      "artifact_id": "fafcbea0-0c56-4db6-871b-1de083b02adb",
+      "passed": true,
+      "created_at": "2026-05-17T17:00:46.516472",
+      "metadata": {
+        "proposed_answer": 48,
+        "ground_truth": 48,
+        "source": "reconciled",
+        "passed": true
+      }
+    }
+  },
+  "claims": {},
+  "policy": {
+    "routing_rules": {},
+    "spawn_threshold": 3,
+    "max_agents": 10,
+    "branch_trigger_on_failure": false,
+    "branch_trigger_on_uncertainty": false,
+    "branch_max_parallel": 3,
+    "uncertainty_threshold": 0.7,
+    "verification_strictness": "all_tests_pass",
+    "max_retries": 3,
+    "stop_on_first_pass": true,
+    "meta_update_enabled": false,
+    "meta_update_interval": 10,
+    "max_iterations": 10,
+    "max_cost_usd": 10.0,
+    "timeout_seconds": 300,
+    "task_lease_duration_seconds": 120
+  },
+  "audit_log": [],
+  "counts": {
+    "n_tasks": 7,
+    "n_artifacts": 4,
+    "n_signals": 1,
+    "n_evidence": 1,
+    "n_claims": 0
+  },
+  "extra": {
+    "passed": true,
+    "proposed_answer": 48,
+    "ground_truth": 48,
+    "clean_answer": 48,
+    "misled_answers": {
+      "Misled-Solver-0": 50
+    },
+    "majority_answer": 50,
+    "correlated_failure_present": false,
+    "conflict_detected": true,
+    "conflict_resolved": true,
+    "reconciler_sided_with_clean": true,
+    "phase_timings": {
+      "phase1_solve_s": 3.01,
+      "phase2_aggregate_s": 0.71,
+      "phase3_reconcile_s": 3.79,
+      "phase4_verify_s": 0.0
+    }
+  }
+}

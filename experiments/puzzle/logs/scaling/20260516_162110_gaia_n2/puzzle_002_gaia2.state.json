@@ -1,0 +1,625 @@
+{
+  "episode_id": "puzzle_002",
+  "tasks": {
+    "b938f559-9742-490c-a480-9fcc78b61f27": {
+      "task_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "parent_id": null,
+      "title": "Solve puzzle_002",
+      "description": "Logic grid puzzle: puzzle_002",
+      "status": "CLAIMED",
+      "deps": [],
+      "priority": 1.0,
+      "lease": {
+        "agent_id": "system",
+        "claimed_at": "2026-05-16T10:55:11.901134",
+        "expires_at": "2026-05-16T10:57:11.901134"
+      },
+      "acceptance_criteria": "All 4 people correctly assigned job, pet, and drink",
+      "metadata": {
+        "puzzle_id": "puzzle_002",
+        "solution": {
+          "Alice": {
+            "job": "artist",
+            "pet": "dog",
+            "drink": "water"
+          },
+          "Bob": {
+            "job": "teacher",
+            "pet": "bird",
+            "drink": "coffee"
+          },
+          "Carol": {
+            "job": "engineer",
+            "pet": "cat",
+            "drink": "tea"
+          },
+          "Dave": {
+            "job": "doctor",
+            "pet": "fish",
+            "drink": "juice"
+          }
+        },
+        "all_clues_text": [
+          "Carol is the engineer.",
+          "Alice is the artist.",
+          "The artist keeps a dog.",
+          "The engineer keeps a cat.",
+          "The doctor drinks juice.",
+          "The teacher drinks coffee.",
+          "Alice drinks water.",
+          "Carol drinks tea.",
+          "Carol keeps a cat.",
+          "Dave keeps a fish.",
+          "The fish owner drinks juice.",
+          "The bird owner drinks coffee."
+        ],
+        "all_clues_structs": [
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "job",
+            "val": "engineer"
+          },
+          {
+            "type": "person_attr",
+            "person": "Alice",
+            "attr": "job",
+            "val": "artist"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "artist",
+            "attr2": "pet",
+            "val2": "dog"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "engineer",
+            "attr2": "pet",
+            "val2": "cat"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "doctor",
+            "attr2": "drink",
+            "val2": "juice"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "teacher",
+            "attr2": "drink",
+            "val2": "coffee"
+          },
+          {
+            "type": "person_attr",
+            "person": "Alice",
+            "attr": "drink",
+            "val": "water"
+          },
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "drink",
+            "val": "tea"
+          },
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "pet",
+            "val": "cat"
+          },
+          {
+            "type": "person_attr",
+            "person": "Dave",
+            "attr": "pet",
+            "val": "fish"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "pet",
+            "val1": "fish",
+            "attr2": "drink",
+            "val2": "juice"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "pet",
+            "val1": "bird",
+            "attr2": "drink",
+            "val2": "coffee"
+          }
+        ],
+        "task_type": "puzzle_root"
+      },
+      "created_at": "2026-05-16T10:55:11.901064",
+      "updated_at": "2026-05-16T10:55:11.901143"
+    },
+    "a6ed774b-86eb-497c-8db4-e416c67175bd": {
+      "task_id": "a6ed774b-86eb-497c-8db4-e416c67175bd",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Analyze Partition A",
+      "description": "Analyze the given clues (Partition A) and post partial deductions",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "expert_a",
+        "clues": [
+          "Carol is the engineer.",
+          "Alice is the artist.",
+          "The artist keeps a dog.",
+          "The engineer keeps a cat.",
+          "The doctor drinks juice.",
+          "The teacher drinks coffee."
+        ],
+        "total_clues": 12,
+        "temperature": 0.2
+      },
+      "created_at": "2026-05-16T10:55:11.901189",
+      "updated_at": "2026-05-16T10:55:16.409428"
+    },
+    "ea9e93e6-41ec-43e4-b452-a2ec08d0bd52": {
+      "task_id": "ea9e93e6-41ec-43e4-b452-a2ec08d0bd52",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Analyze Partition B",
+      "description": "Analyze the given clues (Partition B) and post partial deductions",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "expert_b",
+        "clues": [
+          "Alice drinks water.",
+          "Carol drinks tea.",
+          "Carol keeps a cat.",
+          "Dave keeps a fish.",
+          "The fish owner drinks juice.",
+          "The bird owner drinks coffee."
+        ],
+        "total_clues": 12,
+        "temperature": 0.2
+      },
+      "created_at": "2026-05-16T10:55:11.901196",
+      "updated_at": "2026-05-16T10:55:17.048122"
+    },
+    "ea84e45d-27ac-4bd1-b9ac-56452ac1b344": {
+      "task_id": "ea84e45d-27ac-4bd1-b9ac-56452ac1b344",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Analyze Partition A (agent 2)",
+      "description": "Analyze the given clues (Partition A) and post partial deductions",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "expert_a",
+        "clues": [
+          "Carol is the engineer.",
+          "Alice is the artist.",
+          "The artist keeps a dog.",
+          "The engineer keeps a cat.",
+          "The doctor drinks juice.",
+          "The teacher drinks coffee."
+        ],
+        "total_clues": 12,
+        "temperature": 0.6
+      },
+      "created_at": "2026-05-16T10:55:11.901283",
+      "updated_at": "2026-05-16T10:55:11.901283"
+    },
+    "bfcfa998-fd8c-43b2-a896-202870049551": {
+      "task_id": "bfcfa998-fd8c-43b2-a896-202870049551",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Analyze Partition B (agent 2)",
+      "description": "Analyze the given clues (Partition B) and post partial deductions",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "expert_b",
+        "clues": [
+          "Alice drinks water.",
+          "Carol drinks tea.",
+          "Carol keeps a cat.",
+          "Dave keeps a fish.",
+          "The fish owner drinks juice.",
+          "The bird owner drinks coffee."
+        ],
+        "total_clues": 12,
+        "temperature": 0.6
+      },
+      "created_at": "2026-05-16T10:55:11.901288",
+      "updated_at": "2026-05-16T10:55:11.901288"
+    },
+    "6ad7c76e-ffb7-42b0-84c8-bcaa171cc4de": {
+      "task_id": "6ad7c76e-ffb7-42b0-84c8-bcaa171cc4de",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Synthesize solution (Synthesizer-1)",
+      "description": "Merge expert deductions into a complete solution",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 4.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "synthesize",
+        "temperature": 0.1
+      },
+      "created_at": "2026-05-16T10:55:17.049804",
+      "updated_at": "2026-05-16T10:55:24.022250"
+    },
+    "26aec5d4-568e-4f91-acfa-21b2fef7968b": {
+      "task_id": "26aec5d4-568e-4f91-acfa-21b2fef7968b",
+      "parent_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "title": "Verify solution",
+      "description": "Check the proposed solution against ground truth",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 4.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "verify",
+        "solution": {
+          "Alice": {
+            "job": "artist",
+            "pet": "dog",
+            "drink": "water"
+          },
+          "Bob": {
+            "job": "teacher",
+            "pet": "bird",
+            "drink": "coffee"
+          },
+          "Carol": {
+            "job": "engineer",
+            "pet": "cat",
+            "drink": "tea"
+          },
+          "Dave": {
+            "job": "doctor",
+            "pet": "fish",
+            "drink": "juice"
+          }
+        },
+        "all_clues_text": [
+          "Carol is the engineer.",
+          "Alice is the artist.",
+          "The artist keeps a dog.",
+          "The engineer keeps a cat.",
+          "The doctor drinks juice.",
+          "The teacher drinks coffee.",
+          "Alice drinks water.",
+          "Carol drinks tea.",
+          "Carol keeps a cat.",
+          "Dave keeps a fish.",
+          "The fish owner drinks juice.",
+          "The bird owner drinks coffee."
+        ],
+        "all_clues_structs": [
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "job",
+            "val": "engineer"
+          },
+          {
+            "type": "person_attr",
+            "person": "Alice",
+            "attr": "job",
+            "val": "artist"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "artist",
+            "attr2": "pet",
+            "val2": "dog"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "engineer",
+            "attr2": "pet",
+            "val2": "cat"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "doctor",
+            "attr2": "drink",
+            "val2": "juice"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "job",
+            "val1": "teacher",
+            "attr2": "drink",
+            "val2": "coffee"
+          },
+          {
+            "type": "person_attr",
+            "person": "Alice",
+            "attr": "drink",
+            "val": "water"
+          },
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "drink",
+            "val": "tea"
+          },
+          {
+            "type": "person_attr",
+            "person": "Carol",
+            "attr": "pet",
+            "val": "cat"
+          },
+          {
+            "type": "person_attr",
+            "person": "Dave",
+            "attr": "pet",
+            "val": "fish"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "pet",
+            "val1": "fish",
+            "attr2": "drink",
+            "val2": "juice"
+          },
+          {
+            "type": "attr_attr",
+            "attr1": "pet",
+            "val1": "bird",
+            "attr2": "drink",
+            "val2": "coffee"
+          }
+        ]
+      },
+      "created_at": "2026-05-16T10:55:24.023283",
+      "updated_at": "2026-05-16T10:55:28.312845"
+    }
+  },
+  "artifacts": {
+    "04f9565c-d4d6-4da2-8f12-b88c5f28bfda": {
+      "artifact_id": "04f9565c-d4d6-4da2-8f12-b88c5f28bfda",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "author": "92e7a91a-d8bd-4c52-bea1-08918e2c606b",
+      "content": "## DEFINITE FACTS\n- Alice: job=artist, pet=dog, drink=UNKNOWN\n- Bob: job=UNKNOWN, pet=UNKNOWN, drink=UNKNOWN\n- Carol: job=engineer, pet=cat, drink=UNKNOWN\n- Dave: job=UNKNOWN, pet=UNKNOWN, drink=UNKNOWN\n\n## PARTIAL DEDUCTIONS\n- The doctor drinks juice.\n- The teacher drinks coffee.\n- Bob and Dave are either doctor or teacher.\n- Bob and Dave's pets are either fish or bird.\n- Bob and Dave's drinks are either juice or coffee.\n\n## CANNOT DETERMINE\n- Which of Bob or Dave is the doctor and which is the teacher.\n- The exact pet and drink of Bob and Dave.\n- The drink of Alice, Carol, Bob, and Dave (except for doctor and teacher drinks).\n- The pet of Bob and Dave (only that they are fish or bird).\n\n## REASONING\n1. From clue 1, Carol is the engineer.\n2. From clue 4, the engineer keeps a cat, so Carol's pet is cat.\n3. From clue 2, Alice is the artist.\n4. From clue 3, the artist keeps a dog, so Alice's pet is dog.\n5. From clue 5, the doctor drinks juice.\n6. From clue 6, the teacher drinks coffee.\n7. Since Alice is artist and Carol is engineer, the remaining jobs doctor and teacher belong to Bob and Dave.\n8. Therefore, Bob and Dave's jobs are doctor and teacher in some order.\n9. Since Alice and Carol have pets dog and cat respectively, Bob and Dave's pets must be fish and bird in some order.\n10. Similarly, Bob and Dave's drinks must be juice and coffee respectively, but which one has which is unknown.\n11. Alice's and Carol's drinks are unknown; they cannot be juice or coffee because those are assigned to doctor and teacher, so their drinks must be tea or water, but which is which is unknown.",
+      "provenance": [],
+      "created_at": "2026-05-16T10:55:16.408722",
+      "metadata": {
+        "subtype": "partial_deduction",
+        "partition": "A",
+        "agent_name": "Expert-A-1",
+        "clues": [
+          "Carol is the engineer.",
+          "Alice is the artist.",
+          "The artist keeps a dog.",
+          "The engineer keeps a cat.",
+          "The doctor drinks juice.",
+          "The teacher drinks coffee."
+        ]
+      }
+    },
+    "e44fc408-2504-4c1b-ab49-b156de401f48": {
+      "artifact_id": "e44fc408-2504-4c1b-ab49-b156de401f48",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "author": "52e4af54-d8a9-4f86-9011-625c454115b7",
+      "content": "## DEFINITE FACTS\n- Alice: job=UNKNOWN, pet=UNKNOWN, drink=water\n- Bob: job=UNKNOWN, pet=UNKNOWN, drink=UNKNOWN\n- Carol: job=UNKNOWN, pet=cat, drink=tea\n- Dave: job=UNKNOWN, pet=fish, drink=juice\n\n## PARTIAL DEDUCTIONS\n- The bird owner drinks coffee.\n- Since Dave keeps the fish and the fish owner drinks juice, Dave drinks juice.\n- Alice drinks water, so Alice does not drink tea, coffee, or juice.\n- Carol drinks tea and keeps a cat, so Carol does not have the fish or bird.\n- The bird owner is either Alice or Bob (since Carol has a cat and Dave has a fish).\n- The bird owner drinks coffee, so coffee drinker is either Alice or Bob.\n- Bob's pet is either dog or bird.\n- Bob's drink is either coffee or UNKNOWN (if bird owner drinks coffee, Bob drinks coffee if he owns the bird).\n\n## CANNOT DETERMINE\n- Jobs of all four people.\n- Exact pet of Alice and Bob (only that Carol has cat, Dave has fish, so Alice and Bob have dog or bird).\n- Exact drink of Bob (only narrowed to coffee if bird owner is Bob).\n- Whether Alice owns the bird or dog.\n- Whether Bob owns the bird or dog.\n\n## REASONING\n1. From clue 1, Alice drinks water.\n2. From clue 2 and 3, Carol drinks tea and keeps a cat.\n3. From clue 4, Dave keeps a fish.\n4. From clue 5, the fish owner drinks juice. Since Dave owns the fish, Dave drinks juice.\n5. From clue 6, the bird owner drinks coffee.\n6. Since Carol has a cat and Dave has a fish, the remaining pets (bird and dog) must belong to Alice and Bob.\n7. The bird owner drinks coffee, so the coffee drinker is either Alice or Bob.\n8. Alice drinks water, so Alice cannot be the bird owner (who drinks coffee).\n9. Therefore, Bob owns the bird and drinks coffee.\n10. By elimination, Alice owns the dog.\n11. Jobs are not mentioned in any clues, so remain unknown.",
+      "provenance": [],
+      "created_at": "2026-05-16T10:55:17.047408",
+      "metadata": {
+        "subtype": "partial_deduction",
+        "partition": "B",
+        "agent_name": "Expert-B-1",
+        "clues": [
+          "Alice drinks water.",
+          "Carol drinks tea.",
+          "Carol keeps a cat.",
+          "Dave keeps a fish.",
+          "The fish owner drinks juice.",
+          "The bird owner drinks coffee."
+        ]
+      }
+    },
+    "0b4cbb70-8101-430e-ad1b-1d3c5c9b6747": {
+      "artifact_id": "0b4cbb70-8101-430e-ad1b-1d3c5c9b6747",
+      "type": "REVIEW",
+      "version": 1,
+      "task_id": "b938f559-9742-490c-a480-9fcc78b61f27",
+      "author": "c9f025d9-03c9-4f79-9571-e8b000afd15b",
+      "content": "## SYNTHESIS REASONING\n\nLet's systematically combine the deductions from both partitions, step by step, resolving any uncertainties and ensuring consistency.\n\n### Step 1: Collate Definite Assignments\n\n#### From Expert-A-1:\n- Alice: job=artist, pet=dog\n- Carol: job=engineer, pet=cat\n- Bob & Dave: jobs are doctor/teacher (order unknown), pets are fish/bird (order unknown), drinks are juice/coffee (order unknown)\n- The doctor drinks juice; the teacher drinks coffee.\n\n#### From Expert-B-1:\n- Alice: drink=water\n- Carol: pet=cat, drink=tea\n- Dave: pet=fish, drink=juice\n- The bird owner drinks coffee.\n- Bob's pet is dog or bird; Bob's drink is coffee if he owns the bird.\n- Alice drinks water, so cannot be the bird owner (who drinks coffee).\n- Therefore, Bob owns the bird and drinks coffee; Alice owns the dog.\n\n### Step 2: Cross-Reference and Fill in\n\n#### Pets:\n- Carol: cat (both agree)\n- Dave: fish (B-1)\n- Alice: dog (A-1 and B-1)\n- Bob: bird (B-1, since Alice has dog, Carol has cat, Dave has fish)\n\n#### Drinks:\n- Alice: water (B-1)\n- Carol: tea (B-1)\n- Dave: juice (B-1)\n- Bob: coffee (B-1, since bird owner drinks coffee and Bob owns bird)\n\n#### Jobs:\n- Alice: artist (A-1)\n- Carol: engineer (A-1)\n- Bob & Dave: doctor/teacher (A-1)\n- The doctor drinks juice (A-1), so Dave (who drinks juice) is the doctor.\n- The teacher drinks coffee (A-1), so Bob (who drinks coffee) is the teacher.\n\n### Step 3: Assign All Values\n\n#### Alice:\n- Job: artist (A-1)\n- Pet: dog (A-1, B-1)\n- Drink: water (B-1)\n\n#### Bob:\n- Job: teacher (since he drinks coffee)\n- Pet: bird (B-1)\n- Drink: coffee (B-1)\n\n#### Carol:\n- Job: engineer (A-1)\n- Pet: cat (A-1, B-1)\n- Drink: tea (B-1)\n\n#### Dave:\n- Job: doctor (since he drinks juice)\n- Pet: fish (B-1)\n- Drink: juice (B-1)\n\n### Step 4: Check for Consistency\n\n- Each job, pet, and drink is assigned exactly once.\n- All clues from both partitions are satisfied:\n  - The doctor (Dave) drinks juice.\n  - The teacher (Bob) drinks coffee.\n  - The bird owner (Bob) drinks coffee.\n  - The fish owner (Dave) drinks juice.\n  - Alice is the artist with the dog.\n  - Carol is the engineer with the cat.\n  - Alice drinks water; Carol drinks tea.\n  - Bob and Dave's jobs, pets, and drinks are now fully determined.\n\nNo conflicts are present; all deductions are respected.\n\n---\n\n## FINAL SOLUTION\n\nAlice:  job=artist,   pet=dog,   drink=water  \nBob:    job=teacher, pet=bird,  drink=coffee  \nCarol:  job=engineer,pet=cat,   drink=tea  \nDave:   job=doctor,  pet=fish,  drink=juice  \n\n---\n\n## CONFIDENCE\n\n**High** \u2014 All clues from both expert partitions are satisfied, all assignments are unique, and there are no contradictions.",
+      "provenance": [],
+      "created_at": "2026-05-16T10:55:24.021454",
+      "metadata": {
+        "subtype": "proposed_solution",
+        "agent_name": "Synthesizer-1",
+        "parsed_solution": {
+          "Alice": {
+            "job": "artist",
+            "pet": "dog",
+            "drink": "water"
+          },
+          "Bob": {
+            "job": "teacher",
+            "pet": "bird",
+            "drink": "coffee"
+          },
+          "Carol": {
+            "job": "engineer",
+            "pet": "cat",
+            "drink": "tea"
+          },
+          "Dave": {
+            "job": "doctor",
+            "pet": "fish",
+            "drink": "juice"
+          }
+        },
+        "num_experts_read": 2,
+        "source_task": "6ad7c76e-ffb7-42b0-84c8-bcaa171cc4de"
+      }
+    }
+  },
+  "signals": {},
+  "evidence": {
+    "b17eaa7a-1784-44db-afc8-4e8ff1ed3ca6": {
+      "evidence_id": "b17eaa7a-1784-44db-afc8-4e8ff1ed3ca6",
+      "type": "puzzle_check",
+      "content": "Python ground truth: PASS\nDiff: All assignments match ground truth\nLLM sanity check: PASS\nProposed solution: {'Alice': {'job': 'artist', 'pet': 'dog', 'drink': 'water'}, 'Bob': {'job': 'teacher', 'pet': 'bird', 'drink': 'coffee'}, 'Carol': {'job': 'engineer', 'pet': 'cat', 'drink': 'tea'}, 'Dave': {'job': 'doctor', 'pet': 'fish', 'drink': 'juice'}}",
+      "artifact_id": "0b4cbb70-8101-430e-ad1b-1d3c5c9b6747",
+      "passed": true,
+      "created_at": "2026-05-16T10:55:28.312391",
+      "metadata": {
+        "proposed_solution": {
+          "Alice": {
+            "job": "artist",
+            "pet": "dog",
+            "drink": "water"
+          },
+          "Bob": {
+            "job": "teacher",
+            "pet": "bird",
+            "drink": "coffee"
+          },
+          "Carol": {
+            "job": "engineer",
+            "pet": "cat",
+            "drink": "tea"
+          },
+          "Dave": {
+            "job": "doctor",
+            "pet": "fish",
+            "drink": "juice"
+          }
+        },
+        "ground_truth": {
+          "Alice": {
+            "job": "artist",
+            "pet": "dog",
+            "drink": "water"
+          },
+          "Bob": {
+            "job": "teacher",
+            "pet": "bird",
+            "drink": "coffee"
+          },
+          "Carol": {
+            "job": "engineer",
+            "pet": "cat",
+            "drink": "tea"
+          },
+          "Dave": {
+            "job": "doctor",
+            "pet": "fish",
+            "drink": "juice"
+          }
+        },
+        "diff": "All assignments match ground truth",
+        "llm_verdict": "PASS",
+        "python_verdict": "PASS"
+      }
+    }
+  },
+  "claims": {},
+  "policy": {
+    "routing_rules": {},
+    "spawn_threshold": 3,
+    "max_agents": 10,
+    "branch_trigger_on_failure": false,
+    "branch_trigger_on_uncertainty": false,
+    "branch_max_parallel": 3,
+    "uncertainty_threshold": 0.7,
+    "verification_strictness": "all_tests_pass",
+    "max_retries": 3,
+    "stop_on_first_pass": true,
+    "meta_update_enabled": false,
+    "meta_update_interval": 10,
+    "max_iterations": 10,
+    "max_cost_usd": 10.0,
+    "timeout_seconds": 300,
+    "task_lease_duration_seconds": 120
+  },
+  "audit_log": [],
+  "counts": {
+    "n_tasks": 7,
+    "n_artifacts": 3,
+    "n_signals": 0,
+    "n_evidence": 1,
+    "n_claims": 0
+  },
+  "extra": {
+    "passed": true,
+    "proposed_solution": {
+      "Alice": {
+        "job": "artist",
+        "pet": "dog",
+        "drink": "water"
+      },
+      "Bob": {
+        "job": "teacher",
+        "pet": "bird",
+        "drink": "coffee"
+      },
+      "Carol": {
+        "job": "engineer",
+        "pet": "cat",
+        "drink": "tea"
+      },
+      "Dave": {
+        "job": "doctor",
+        "pet": "fish",
+        "drink": "juice"
+      }
+    },
+    "ground_truth": {
+      "Alice": {
+        "job": "artist",
+        "pet": "dog",
+        "drink": "water"
+      },
+      "Bob": {
+        "job": "teacher",
+        "pet": "bird",
+        "drink": "coffee"
+      },
+      "Carol": {
+        "job": "engineer",
+        "pet": "cat",
+        "drink": "tea"
+      },
+      "Dave": {
+        "job": "doctor",
+        "pet": "fish",
+        "drink": "juice"
+      }
+    },
+    "num_expert_deductions": 2,
+    "num_synthesis_artifacts": 1,
+    "conflict_detected": false,
+    "conflict_resolved": false,
+    "phase_timings": {
+      "phase1_expert_s": 5.15,
+      "phase2_synthesis_s": 6.97,
+      "phase3_critique_s": 0.0,
+      "phase4_verify_s": 4.29
+    }
+  }
+}

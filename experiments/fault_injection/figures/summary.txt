@@ -1,0 +1,39 @@
+================================================================================
+E9: Fault Injection — Summary
+================================================================================
+
+--- Clean GAIA (no fault) ---
+  puzzles  : 20
+  passed   : 20
+  accuracy : 100.0%
+  cost     : $1.1653
+
+--- Fault + Standard GAIA (redundancy only) ---
+  puzzles  : 20
+  passed   : 20
+  accuracy : 100.0%
+  cost     : $1.2057
+
+--- Fault + Agent-level trust (naive) ---
+  puzzles  : 20
+  passed   : 17
+  accuracy : 85.0%
+  cost     : $1.5480
+  auditor correctly flagged faulty: 19/20
+
+--- Fault + Clue-level trust (principled) ---
+  puzzles  : 20
+  passed   : 16
+  accuracy : 80.0%
+  cost     : $1.5591
+  auditor correctly flagged faulty: 20/20
+
+================================================================================
+FINDINGS (honest interpretation)
+================================================================================
+1. Structural redundancy is fault-tolerant for free: fault_standard = 100% (= clean 100%). One faulty expert out of four is absorbed by the redundant correct experts + synthesizer reconciliation, WITHOUT any explicit defense.
+2. Naive agent-level trust OVER-CORRECTS: fault_gaia = 85% (< fault_standard). The auditor detects the faulty agent well, but zeroing out a 30%-corrupted expert also discards its 70% correct, NECESSARY clues — fatal in information-asymmetric puzzles.
+3. Claim-level trust does NOT rescue it: fault_gaia_partial = 80% — still underperforms the undefended redundant baseline. Even keeping a flagged expert's uncontradicted claims, the explicit trust layer perturbs the synthesizer's natural reconciliation enough to lose accuracy.
+   → claim-level vs agent-level: -5% (both < fault_standard 100% — every explicit trust mechanism tried HURT).
+
+Paper takeaway: GAIA's blackboard redundancy already provides Byzantine tolerance to a single corrupted source FOR FREE (fault_standard = clean = 100%). Surprisingly, adding an explicit deduction auditor + trust-weighted synthesis consistently DEGRADES accuracy (85% / 80%) despite near-perfect fault detection (19-20/20), because re-weighting deductions disturbs the synthesizer's natural reconciliation and risks discarding necessary asymmetric clues. Implication: for single-source corruption, structural redundancy dominates bolt-on trust mechanisms; reserve explicit trust-weighting for higher corruption rates or multi-agent collusion (future work).

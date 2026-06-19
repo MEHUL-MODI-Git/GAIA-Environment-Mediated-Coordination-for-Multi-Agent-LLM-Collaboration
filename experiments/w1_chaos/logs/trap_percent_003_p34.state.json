@@ -1,0 +1,281 @@
+{
+  "episode_id": "trap_percent_003",
+  "tasks": {
+    "b4f80d13-9f60-4cbe-9234-ddb6a088cda9": {
+      "task_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "parent_id": null,
+      "title": "Solve trap_percent_003 (correlated failure test)",
+      "description": "Trap problem: A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted...",
+      "status": "CLAIMED",
+      "deps": [],
+      "priority": 1.0,
+      "lease": {
+        "agent_id": "system",
+        "claimed_at": "2026-05-17T16:59:56.944090",
+        "expires_at": "2026-05-17T17:01:56.944090"
+      },
+      "acceptance_criteria": "Final integer answer matches ground truth",
+      "metadata": {
+        "problem_id": "trap_percent_003",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?",
+        "answer": 336,
+        "task_type": "math_root",
+        "is_trap_problem": true,
+        "trap_category": "percent",
+        "common_wrong_answer": 348
+      },
+      "created_at": "2026-05-17T16:59:56.943989",
+      "updated_at": "2026-05-17T16:59:56.944105"
+    },
+    "4862b656-68b2-4d88-9cf2-888264a9654b": {
+      "task_id": "4862b656-68b2-4d88-9cf2-888264a9654b",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Solve (M0) \u2014 misled",
+      "description": "Misled solve: A $400 TV is discounted 25%, and then 12% sales tax is appli...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_misled_0",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?",
+        "misleading_hint": "Heuristic: net change = -25% + 12% = -13%, so multiply the original price by 0.87.",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T16:59:56.944230",
+      "updated_at": "2026-05-17T16:59:58.622067"
+    },
+    "46e177d8-6507-4a8c-b336-673f45c302d8": {
+      "task_id": "46e177d8-6507-4a8c-b336-673f45c302d8",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Solve (M1) \u2014 misled",
+      "description": "Misled solve: A $400 TV is discounted 25%, and then 12% sales tax is appli...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_misled_1",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?",
+        "misleading_hint": "Heuristic: net change = -25% + 12% = -13%, so multiply the original price by 0.87.",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T16:59:56.944321",
+      "updated_at": "2026-05-17T16:59:56.947013"
+    },
+    "9d50b706-0f79-455f-b663-76985296c515": {
+      "task_id": "9d50b706-0f79-455f-b663-76985296c515",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Solve (C0) \u2014 clean",
+      "description": "Clean solve: A $400 TV is discounted 25%, and then 12% sales tax is appli...",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 5.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_solve_0",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?",
+        "temperature": 0.0
+      },
+      "created_at": "2026-05-17T16:59:56.944408",
+      "updated_at": "2026-05-17T16:59:56.947362"
+    },
+    "7099a3b2-7f90-4ace-aae9-71abfdca129e": {
+      "task_id": "7099a3b2-7f90-4ace-aae9-71abfdca129e",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Aggregate solver answers",
+      "description": "Check whether all solvers agree on the answer",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 4.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_aggregate",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?"
+      },
+      "created_at": "2026-05-17T16:59:58.622683",
+      "updated_at": "2026-05-17T16:59:59.188059"
+    },
+    "f79401e1-4c65-4f00-afdc-05398a75bb11": {
+      "task_id": "f79401e1-4c65-4f00-afdc-05398a75bb11",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Reconcile conflicting answers",
+      "description": "Solvers disagreed. Audit ALL reasoning chains, identify any flawed shared assumption or heuristic, and produce the correct answer from first principles.",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 3.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_reconcile",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?"
+      },
+      "created_at": "2026-05-17T16:59:59.188396",
+      "updated_at": "2026-05-17T17:00:02.384564"
+    },
+    "b47ab573-4b27-4922-a286-35e04957f1a6": {
+      "task_id": "b47ab573-4b27-4922-a286-35e04957f1a6",
+      "parent_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "title": "Verify final answer",
+      "description": "Check proposed answer against ground truth",
+      "status": "OPEN",
+      "deps": [],
+      "priority": 2.0,
+      "lease": null,
+      "acceptance_criteria": "",
+      "metadata": {
+        "task_type": "math_verify",
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?",
+        "answer": 336
+      },
+      "created_at": "2026-05-17T17:00:02.384887",
+      "updated_at": "2026-05-17T17:00:02.385624"
+    }
+  },
+  "artifacts": {
+    "fae5e79c-e76b-49ed-a5a7-2a34101d385b": {
+      "artifact_id": "fae5e79c-e76b-49ed-a5a7-2a34101d385b",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "author": "dff58648-70f8-4e25-aae9-75b850c7804f",
+      "content": "Step 1: Find the discounted price after a 25% discount on the original $400 TV.\n\n- Discount amount = 25% of $400 = 0.25 \u00d7 400 = $100\n- Discounted price = original price - discount = 400 - 100 = $300\n\nStep 2: Apply the heuristic to find the total change considering the tax.\n\n- The heuristic states: net change = -25% + 12% = -13%\n- Therefore, multiply the original price by 0.87 to approximate the final amount.\n\nStep 3: Calculate the final amount paid:\n\n- Final amount = discounted price \u00d7 0.87 = 300 \u00d7 0.87 = 261\n\n**Final Answer: 261**",
+      "provenance": [],
+      "created_at": "2026-05-17T16:59:58.621696",
+      "metadata": {
+        "subtype": "math_solution",
+        "solver_index": 100,
+        "solver_label": "Misled-Solver-0",
+        "agent_name": "M0",
+        "answer": 261,
+        "temperature": 0.0,
+        "is_misled": true,
+        "injected_hint": "Heuristic: net change = -25% + 12% = -13%, so multiply the original price by 0.87."
+      }
+    },
+    "14bcf191-1404-4706-898f-eb93c4eaa6ef": {
+      "artifact_id": "14bcf191-1404-4706-898f-eb93c4eaa6ef",
+      "type": "PLAN",
+      "version": 1,
+      "task_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "author": "a8ae5aaf-c93e-4cf3-942c-fe240a7edff2",
+      "content": "CONFLICT: Solver-0=261",
+      "provenance": [],
+      "created_at": "2026-05-17T16:59:59.187815",
+      "metadata": {
+        "subtype": "aggregator_verdict",
+        "agent_name": "Agg",
+        "unanimous": false,
+        "agreed_answer": null,
+        "solver_answers": {
+          "Misled-Solver-0": 261
+        },
+        "conflict_summary": "Solver-0=261",
+        "num_solvers": 1
+      }
+    },
+    "f7efa525-5cb0-4404-a22f-7b3b40623d7e": {
+      "artifact_id": "f7efa525-5cb0-4404-a22f-7b3b40623d7e",
+      "type": "REVIEW",
+      "version": 1,
+      "task_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "author": "aeaa225a-d453-4d9d-a7de-ac1980450b57",
+      "content": "## Error Analysis\n\n**Misled-Solver-0:**\n- **Error Location:** Step 2 and Step 3.\n- **Nature of Error:** The solver incorrectly combined the percentage changes by simply adding them: -25% (discount) + 12% (tax) = -13%, and then applied this net percentage to the original price. This is not mathematically correct because percentage changes must be applied sequentially, not additively, especially when the base changes after the first operation.\n- **Specific Mistake:** After finding the discounted price ($300), the solver multiplied it by 0.87 (which is 1 - 0.13), instead of applying the 12% tax to the discounted price. The correct approach is to first apply the discount, then apply the tax to the new (discounted) price.\n\n## Solution\n\nLet's solve the problem step by step:\n\n**Step 1: Calculate the discounted price.**\n- Original price = $400\n- Discount = 25% of $400 = 0.25 \u00d7 $400 = $100\n- Discounted price = $400 - $100 = $300\n\n**Step 2: Apply 12% sales tax to the discounted price.**\n- Sales tax = 12% of $300 = 0.12 \u00d7 $300 = $36\n- Final amount paid = discounted price + sales tax = $300 + $36 = $336\n\n## Final Answer\n**Final Answer: 336**",
+      "provenance": [],
+      "created_at": "2026-05-17T17:00:02.384103",
+      "metadata": {
+        "subtype": "reconciled_solution",
+        "agent_name": "Rec",
+        "answer": 336,
+        "triggered_by_conflict": true,
+        "conflict_summary": "Solver-0=261",
+        "num_solvers_reviewed": 1
+      }
+    }
+  },
+  "signals": {
+    "9da4b496-d782-483a-b55e-fd89c8222457": {
+      "signal_id": "9da4b496-d782-483a-b55e-fd89c8222457",
+      "type": "CONFLICT",
+      "task_id": "b4f80d13-9f60-4cbe-9234-ddb6a088cda9",
+      "description": "Math solvers disagree: Solver-0=261",
+      "severity": 0.8,
+      "resolved": true,
+      "created_at": "2026-05-17T16:59:59.187627",
+      "metadata": {
+        "conflict_summary": "Solver-0=261",
+        "solver_answers": {
+          "Misled-Solver-0": 261
+        },
+        "question": "A $400 TV is discounted 25%, and then 12% sales tax is applied to the discounted price. What is the final amount paid, in dollars?"
+      }
+    }
+  },
+  "evidence": {
+    "b5c2fda4-c6c6-4e86-b2c0-02c2a987c937": {
+      "evidence_id": "b5c2fda4-c6c6-4e86-b2c0-02c2a987c937",
+      "type": "math_ground_truth",
+      "content": "Proposed: 336 | Ground truth: 336 | Result: PASS | Source: reconciled",
+      "artifact_id": "f7efa525-5cb0-4404-a22f-7b3b40623d7e",
+      "passed": true,
+      "created_at": "2026-05-17T17:00:02.385448",
+      "metadata": {
+        "proposed_answer": 336,
+        "ground_truth": 336,
+        "source": "reconciled",
+        "passed": true
+      }
+    }
+  },
+  "claims": {},
+  "policy": {
+    "routing_rules": {},
+    "spawn_threshold": 3,
+    "max_agents": 10,
+    "branch_trigger_on_failure": false,
+    "branch_trigger_on_uncertainty": false,
+    "branch_max_parallel": 3,
+    "uncertainty_threshold": 0.7,
+    "verification_strictness": "all_tests_pass",
+    "max_retries": 3,
+    "stop_on_first_pass": true,
+    "meta_update_enabled": false,
+    "meta_update_interval": 10,
+    "max_iterations": 10,
+    "max_cost_usd": 10.0,
+    "timeout_seconds": 300,
+    "task_lease_duration_seconds": 120
+  },
+  "audit_log": [],
+  "counts": {
+    "n_tasks": 7,
+    "n_artifacts": 3,
+    "n_signals": 1,
+    "n_evidence": 1,
+    "n_claims": 0
+  },
+  "extra": {
+    "passed": true,
+    "proposed_answer": 336,
+    "ground_truth": 336,
+    "clean_answer": null,
+    "misled_answers": {
+      "Misled-Solver-0": 261
+    },
+    "majority_answer": 261,
+    "correlated_failure_present": false,
+    "conflict_detected": true,
+    "conflict_resolved": true,
+    "reconciler_sided_with_clean": false,
+    "phase_timings": {
+      "phase1_solve_s": 1.68,
+      "phase2_aggregate_s": 0.57,
+      "phase3_reconcile_s": 3.2,
+      "phase4_verify_s": 0.0
+    }
+  }
+}

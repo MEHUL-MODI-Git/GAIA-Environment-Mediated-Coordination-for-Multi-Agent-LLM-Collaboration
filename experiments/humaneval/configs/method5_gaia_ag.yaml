@@ -1,0 +1,60 @@
+# Method 5: GAIA A-G (Full GAIA)
+# GAIA A-F + Meta-update (cross-episode policy tuning)
+# Features: A-F (from Method 4) + G (Meta-update)
+
+method: gaia_ag
+
+# Agent LLMs
+coder:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.7
+  max_tokens: 2000
+
+critic:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.5
+  max_tokens: 1000
+
+verifier:
+  provider: openai
+  model: gpt-4o  # Slow tier
+  temperature: 0.3
+  max_tokens: 1500
+
+# Policy settings (initial - will be tuned by meta-learner)
+policy:
+  max_iterations: 10  # Meta-learner may adjust this
+  max_retries: 3
+  spawn_threshold: 5  # Meta-learner may adjust this
+  max_agents: 10
+  verification_strictness: all_tests_pass
+  stop_on_first_pass: true
+  branch_trigger_on_failure: true  # Meta-learner may adjust this
+  branch_max_parallel: 3
+
+# Meta-update settings
+meta_update:
+  enabled: true  # Feature G: ENABLED
+  update_frequency: 10  # Tune policy every 10 episodes
+  # The meta-learner will:
+  # - Track pass rates, iterations, conflicts, branch usage
+  # - Adjust max_iterations, spawn_threshold, branch_trigger_on_failure
+  # - Optimize for pass@1 while managing cost
+
+# Feature toggles
+features:
+  blackboard: true  # A
+  tiered_agents: true  # B
+  self_assignment: true  # C
+  agent_spawning: true  # D
+  conflict_as_task: true  # E
+  branch_and_merge: true  # F
+  meta_update: true  # G - ENABLED
+
+# Expected performance:
+# - pass@1: ~85-90% (adaptive policy tuning)
+# - Cost: Variable (meta-learner optimizes cost/performance)
+# - Latency: Medium-High
+# - Key advantage: Learns from experience, adapts to problem distribution

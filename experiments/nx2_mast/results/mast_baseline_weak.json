@@ -1,0 +1,213 @@
+{
+  "label": "baseline_weak",
+  "judge_model": "gpt-4.1",
+  "n_failed_traces": 21,
+  "mode_counts": {
+    "FM-3.2": 20,
+    "FM-2.5": 4,
+    "FM-3.3": 1,
+    "FM-3.1": 1
+  },
+  "primary_counts": {
+    "FM-3.2": 15,
+    "FM-2.5": 4,
+    "FM-3.3": 1,
+    "FM-3.1": 1
+  },
+  "per_trace": [
+    {
+      "trace": "majority_vote:trap_sequence_003",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents failed to verify their answer, resulting in propagation of an incorrect solution (1632 instead of 1683). No evidence of verification step."
+    },
+    {
+      "trace": "blackboard_plain:trap_boundary_004",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.85,
+      "evidence": "The trace ended with an incorrect answer, indicating that verification was skipped or incomplete, allowing the error to propagate to the final output."
+    },
+    {
+      "trace": "debate:trap_percent_001",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.8,
+      "evidence": "Agents produced inconsistent answers (100, 100, 112) but did not resolve the discrepancy; verification was attempted but incorrect, leading to propagation of error."
+    },
+    {
+      "trace": "debate:trap_rate_001",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.9,
+      "evidence": "One agent proposed 4, but the final answer remained 9, ignoring the correct input. No evidence of verification before finalizing."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_001",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents failed to verify their proposed answer (1800), which was incorrect; the correct answer was 1875. No evidence of verification step."
+    },
+    {
+      "trace": "debate:trap_sequence_001",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.9,
+      "evidence": "One agent proposed 420, but others ignored this input and stuck with 380. No verification step to resolve the discrepancy."
+    },
+    {
+      "trace": "debate:trap_boundary_001",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.85,
+      "evidence": "One agent proposed 1875, but others ignored this and stuck with 1800. No evidence of verification or reconciliation of differing answers."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_003",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents agreed on an incorrect answer (10) without verifying it against the correct answer (11); no evidence of a verification step."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_004",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents proposed an incorrect answer (15) instead of the correct one (14), indicating they failed to verify their solution before finalizing."
+    },
+    {
+      "trace": "majority_vote:trap_sequence_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents converged on an incorrect answer (107) without verifying against the correct solution (103); no evidence of a verification step."
+    },
+    {
+      "trace": "majority_vote:trap_rate_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.9,
+      "evidence": "The agents converged on an incorrect answer without verifying correctness, allowing the error to propagate to the final output."
+    },
+    {
+      "trace": "majority_vote:trap_percent_001",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents failed to verify their answer, propagating an incorrect value (100) instead of the correct one (112). No evidence of verification step."
+    },
+    {
+      "trace": "majority_vote:trap_rate_001",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.9,
+      "evidence": "The agents converged on an incorrect answer (9) without verifying correctness, allowing the error to propagate instead of checking against the correct answer (4)."
+    },
+    {
+      "trace": "blackboard_plain:trap_percent_003",
+      "modes": [
+        "FM-3.1"
+      ],
+      "primary": "FM-3.1",
+      "confidence": 0.9,
+      "evidence": "The episode ended without proposing any answer, indicating premature termination before attempting to solve the problem."
+    },
+    {
+      "trace": "majority_vote:trap_rate_003",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents failed to verify their answer, propagating an error (50 instead of correct 48) without checking correctness."
+    },
+    {
+      "trace": "debate:trap_rate_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.85,
+      "evidence": "The agents did not verify their answer after receiving a divergent response (2), allowing an error to propagate without resolution."
+    },
+    {
+      "trace": "debate:trap_rate_003",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.85,
+      "evidence": "Agents converged on an incorrect answer without verifying its correctness; error was propagated without proper checking."
+    },
+    {
+      "trace": "majority_vote:trap_sequence_001",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.9,
+      "evidence": "The agents failed to verify their answer, propagating an incorrect solution (380 instead of 420) without checking correctness."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.95,
+      "evidence": "The agents agreed on an incorrect answer (66) without verifying against the correct solution (67); verification was skipped or incomplete."
+    },
+    {
+      "trace": "debate:trap_boundary_004",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.85,
+      "evidence": "One agent proposed 14, but the final answer was 15, indicating a correct peer contribution was ignored. No verification step is evident before finalizing."
+    },
+    {
+      "trace": "debate:trap_boundary_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.8,
+      "evidence": "Agents converged on an incorrect answer (66/67) without evidence of verifying correctness before finalizing."
+    }
+  ]
+}

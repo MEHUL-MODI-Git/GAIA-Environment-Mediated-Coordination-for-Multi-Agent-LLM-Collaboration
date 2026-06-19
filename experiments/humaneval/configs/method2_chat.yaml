@@ -1,0 +1,27 @@
+# Method 2: Multi-Agent Chat Baseline
+# Conversational coordination: solver debates with critic until consensus
+
+method: multi_agent_chat
+
+solver:
+  provider: openai
+  model: gpt-4o-mini  # Fast model for code generation
+  temperature: 0.7
+  max_tokens: 2000
+
+critic:
+  provider: openai
+  model: gpt-4o-mini  # Fast model for review
+  temperature: 0.5
+  max_tokens: 1000
+
+parameters:
+  max_rounds: 5  # Debate rounds per attempt
+  max_retries: 3  # Number of full retry cycles
+  timeout: 10
+
+# Expected performance:
+# - pass@1: ~70-75% (debate helps catch errors)
+# - Cost: Medium (multiple LLM calls per solution)
+# - Latency: Medium (debate adds overhead)
+# - Limitation: Conversational coordination is expensive and unreliable

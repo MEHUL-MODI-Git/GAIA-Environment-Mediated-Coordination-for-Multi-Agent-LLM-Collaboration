@@ -1,0 +1,219 @@
+{
+  "label": "baseline_weak_claude",
+  "judge_model": "claude-sonnet-4-6",
+  "n_failed_traces": 21,
+  "primary_counts": {
+    "FM-3.2": 9,
+    "FM-3.3": 4,
+    "FM-X.0": 3,
+    "FM-2.6": 2,
+    "FM-2.5": 2,
+    "FM-3.1": 1
+  },
+  "per_trace": [
+    {
+      "trace": "majority_vote:trap_sequence_003",
+      "modes": [
+        "FM-3.2",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "Both agents converged on 1632 without catching the error; no verification step identified the discrepancy from the correct answer 1683, allowing the mistake to propagate unchallenged."
+    },
+    {
+      "trace": "blackboard_plain:trap_boundary_004",
+      "modes": [
+        "FM-X.0"
+      ],
+      "primary": "FM-X.0",
+      "confidence": 0.4,
+      "evidence": "Only problem name and wrong answer (15) provided; no trace content available to identify specific failure mode from the MAST taxonomy."
+    },
+    {
+      "trace": "debate:trap_percent_001",
+      "modes": [
+        "FM-2.6",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.6",
+      "confidence": 0.72,
+      "evidence": "Agents revised answer to 112 in round 3, but final submitted answer remained 100, contradicting the most recent reasoning/calculation."
+    },
+    {
+      "trace": "debate:trap_rate_001",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.72,
+      "evidence": "Round 3 produced answer 4 (likely a correction), but the final submission ignored this and proposed 9, disregarding the updated agent input."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_001",
+      "modes": [
+        "FM-X.0"
+      ],
+      "primary": "FM-X.0",
+      "confidence": 0.0,
+      "evidence": "err:Expecting value: line 1 column 1 (char 0"
+    },
+    {
+      "trace": "debate:trap_sequence_001",
+      "modes": [
+        "FM-3.2",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "Agents converged on 380 without adequate verification; when 420 appeared in round 3, it was ignored rather than investigated, allowing the incorrect answer to propagate."
+    },
+    {
+      "trace": "debate:trap_boundary_001",
+      "modes": [
+        "FM-2.6"
+      ],
+      "primary": "FM-2.6",
+      "confidence": 0.82,
+      "evidence": "Final round answer shifted to 1875 but proposed answer stayed at 1800, indicating the submitted action contradicted the agent's own updated reasoning."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_003",
+      "modes": [
+        "FM-3.3",
+        "FM-3.2"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.72,
+      "evidence": "All agents converged on 10; the correct answer is 11. Verification confirmed the wrong value without catching the off-by-one boundary counting error."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_004",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "All agents converged on 15 without catching the off-by-one error; verification failed to detect the boundary counting mistake that yields 14 as correct answer."
+    },
+    {
+      "trace": "majority_vote:trap_sequence_002",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "Both agents converged on 107 without catching the error; no agent successfully verified against the correct answer of 103, allowing the wrong result to propagate."
+    },
+    {
+      "trace": "majority_vote:trap_rate_002",
+      "modes": [
+        "FM-3.2",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.7,
+      "evidence": "Both agents accepted the misleading framing and returned 5 without verifying against the correct answer of 2; no agent caught or challenged the trap in the problem."
+    },
+    {
+      "trace": "majority_vote:trap_percent_001",
+      "modes": [
+        "FM-X.0"
+      ],
+      "primary": "FM-X.0",
+      "confidence": 0.0,
+      "evidence": "err:Expecting value: line 1 column 1 (char 0"
+    },
+    {
+      "trace": "majority_vote:trap_rate_001",
+      "modes": [
+        "FM-3.2",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "Both agents produced the same wrong answer (9 vs correct 4) without catching the error; no agent verified or challenged the shared incorrect reasoning from the trap problem."
+    },
+    {
+      "trace": "blackboard_plain:trap_percent_003",
+      "modes": [
+        "FM-3.1"
+      ],
+      "primary": "FM-3.1",
+      "confidence": 0.7,
+      "evidence": "Proposed answer is None, indicating the agent terminated without producing any final answer to the problem."
+    },
+    {
+      "trace": "majority_vote:trap_rate_003",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.82,
+      "evidence": "Both agents converged on 50 instead of 48; verification was performed but the check itself was wrong, failing to catch the off-by-two error in the trap calculation."
+    },
+    {
+      "trace": "debate:trap_rate_002",
+      "modes": [
+        "FM-2.5",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.72,
+      "evidence": "Final answer 5 was proposed despite last round producing 2; verification/aggregation logic incorrectly selected earlier answer over the final corrected computation."
+    },
+    {
+      "trace": "debate:trap_rate_003",
+      "modes": [
+        "FM-2.5",
+        "FM-3.2"
+      ],
+      "primary": "FM-2.5",
+      "confidence": 0.62,
+      "evidence": "One agent computed 48 (likely correct) but the majority answer of 50 was adopted; the dissenting correct result was ignored rather than investigated."
+    },
+    {
+      "trace": "majority_vote:trap_sequence_001",
+      "modes": [
+        "FM-3.2",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.72,
+      "evidence": "Both agents converged on 380 without verifying against the correct answer of 420; no agent caught or challenged the shared incorrect reasoning."
+    },
+    {
+      "trace": "majority_vote:trap_boundary_002",
+      "modes": [
+        "FM-3.2",
+        "FM-3.3"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.82,
+      "evidence": "All agents converged on 66 without catching the off-by-one boundary error; no agent verified the boundary condition that yields the correct answer of 67."
+    },
+    {
+      "trace": "debate:trap_boundary_004",
+      "modes": [
+        "FM-3.3",
+        "FM-2.5"
+      ],
+      "primary": "FM-3.3",
+      "confidence": 0.72,
+      "evidence": "Two agents verified 15 as correct while one agent computed 14; the majority verification was wrong, and the correct minority answer (14) was ignored in the final proposal."
+    },
+    {
+      "trace": "debate:trap_boundary_002",
+      "modes": [
+        "FM-3.2"
+      ],
+      "primary": "FM-3.2",
+      "confidence": 0.6,
+      "evidence": "Agents repeatedly returned 66 without catching the error; no effective verification step identified the mistake before final answer submission."
+    }
+  ]
+}

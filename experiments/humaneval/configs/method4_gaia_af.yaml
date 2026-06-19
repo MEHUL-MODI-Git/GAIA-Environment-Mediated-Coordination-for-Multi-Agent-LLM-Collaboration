@@ -1,0 +1,51 @@
+# Method 4: GAIA A-F
+# GAIA A-E + Branch-and-merge sandbox trials
+# Features: A-E (from Method 3) + F (Branch-and-merge)
+
+method: gaia_af
+
+# Agent LLMs
+coder:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.7
+  max_tokens: 2000
+
+critic:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.5
+  max_tokens: 1000
+
+verifier:
+  provider: openai
+  model: gpt-4o  # Slow tier
+  temperature: 0.3
+  max_tokens: 1500
+
+# Policy settings
+policy:
+  max_iterations: 10
+  max_retries: 3
+  spawn_threshold: 5
+  max_agents: 10
+  verification_strictness: all_tests_pass
+  stop_on_first_pass: true
+  branch_trigger_on_failure: true  # Feature F: ENABLED
+  branch_max_parallel: 3  # Try 3 approaches in parallel
+
+# Feature toggles
+features:
+  blackboard: true  # A
+  tiered_agents: true  # B
+  self_assignment: true  # C
+  agent_spawning: true  # D
+  conflict_as_task: true  # E
+  branch_and_merge: true  # F - ENABLED
+  meta_update: false  # G - DISABLED
+
+# Expected performance:
+# - pass@1: ~80-85% (branching helps with hard problems)
+# - Cost: High (parallel solution attempts)
+# - Latency: Medium-High (branching overhead)
+# - Key advantage: Multiple approaches tested in parallel, merge best

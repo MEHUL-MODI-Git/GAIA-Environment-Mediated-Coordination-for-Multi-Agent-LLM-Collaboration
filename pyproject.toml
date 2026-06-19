@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gaia"
+version = "0.1.0"
+description = "GAIA: Generalized Multi-Agent Collaboration Framework with Environment-Mediated Coordination"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "GAIA Research Team"}
+]
+dependencies = [
+    "pydantic>=2.0",
+    "openai>=1.0",
+    "anthropic>=0.39.0",
+    "groq>=0.11.0",
+    "google-generativeai>=0.8.0",
+    "aiofiles>=23.0.0",
+    "pyyaml>=6.0",
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "black>=23.0.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["gaia*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,49 @@
+# Method 3: GAIA A-E
+# Blackboard coordination with conflict-as-task resolution
+# Features: A (Blackboard), B (Tiers), C (Self-assign), D (Spawn), E (Conflict-as-task)
+
+method: gaia_ae
+
+# Agent LLMs
+coder:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.7
+  max_tokens: 2000
+
+critic:
+  provider: openai
+  model: gpt-4o-mini  # Fast tier
+  temperature: 0.5
+  max_tokens: 1000
+
+verifier:
+  provider: openai
+  model: gpt-4o  # Slow tier for verification
+  temperature: 0.3
+  max_tokens: 1500
+
+# Policy settings
+policy:
+  max_iterations: 10  # Max coordination cycles per episode
+  max_retries: 3
+  spawn_threshold: 5  # Feature D: spawn agents if backlog > 5
+  max_agents: 10
+  verification_strictness: all_tests_pass
+  stop_on_first_pass: true
+
+# Feature toggles
+features:
+  blackboard: true  # A
+  tiered_agents: true  # B
+  self_assignment: true  # C
+  agent_spawning: true  # D
+  conflict_as_task: true  # E
+  branch_and_merge: false  # F - DISABLED
+  meta_update: false  # G - DISABLED
+
+# Expected performance:
+# - pass@1: ~75-80% (blackboard + verification + conflict resolution)
+# - Cost: Medium-High (more agents, verification)
+# - Latency: Medium (parallel coordination)
+# - Key advantage: Explicit conflict resolution, no debate overhead
